@@ -11,7 +11,7 @@
     include "conexao_bd.php";
 
     $login_usuario= $_POST["txtLoginUsuario"];
-    $seha_usuario= $_POST["txtSenhaUsuario"];
+    $senha_usuario= $_POST["txtSenhaUsuario"];
 
     $hash = password_hash($senha_usuario,1);
     
