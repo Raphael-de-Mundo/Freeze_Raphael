@@ -13,8 +13,19 @@
     $login_usuario= $_POST["txtLoginUsuario"];
     $seha_usuario= $_POST["txtSenhaUsuario"];
 
-    $sql= "INSERT INTO (login_usuario,senha_usuario)"
-    $sql.=" VALUES ()"    ?>
+    $hash = password_hash($senha_usuario,1);
+    
+    $sql= "INSERT INTO usuario(login_usuario,senha_usuario) VALUES('$login_usuario','$hash')";
+
+    if (executarComando($sql))
+    {
+    echo"<h1>Usuario Adicionado!</h1>";
+    }
+    else{
+    echo"<h1>Usuario não cadastrado</h1>";
+    }
+
+    ?>
 
 
 
